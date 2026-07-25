@@ -520,14 +520,18 @@ export class WhatsAppBot {
   private normalizeJid(jidStr: string): string {
     if (!jidStr) return "";
     let clean = jidStr.replace(/:\d+/, "");
-    const parts = clean.split("@");
-    let numPart = parts[0].replace(/[^0-9]/g, "");
+    
+    if (clean.endsWith("@g.us")) {
+        let groupNum = clean.split("@")[0];
+        return groupNum + "@g.us";
+    }
+
+    let numPart = clean.replace(/[^0-9]/g, "");
+    
     if (numPart.startsWith("0")) {
         numPart = "62" + numPart.slice(1);
     }
-    if (clean.includes("@g.us")) {
-        return numPart + "@g.us";
-    }
+    
     return numPart + "@s.whatsapp.net";
   }
 
@@ -4174,14 +4178,14 @@ Link referensi: ${randomItem.link}` }, { quoted: msg });
     } else if (body.startsWith(".listsewa") || body.startsWith("listsewa")) {
        await this.sock.sendMessage(jid, { text: `📋 *List Nomor Sewa:*\n1. 628xxx (Aktif)` }, { quoted: msg });
     } else if (body === ".owner" || body === "owner") {
-       const owners = Array.from(this.ownerNumbers).map(num => num.split('@')[0]);
+       const owners = Array.from(this.ownerNumbers);
        let text = "👑 *Pemilik Bot*\n\n";
        if (owners.length > 0) {
-           owners.forEach((num, i) => text += `${i+1}. wa.me/${num}\n`);
+           owners.forEach((num, i) => text += `${i+1}. @${num.split('@')[0]}\n`);
        } else {
            text += "Belum ada owner yang ditambahkan.\n(Untuk menambahkan: .addowner @user)";
        }
-       await this.sock.sendMessage(jid, { text }, { quoted: msg });
+       await this.sock.sendMessage(jid, { text, mentions: owners }, { quoted: msg });
     } else if (body.startsWith(".stiker") || body.startsWith("stiker") || body.startsWith(".hd") || body.startsWith("hd")) {
       const type = body.includes("hd") ? "HD" : "Stiker";
       
