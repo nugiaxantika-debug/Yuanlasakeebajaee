@@ -526,6 +526,11 @@ export class WhatsAppBot {
         return groupNum + "@g.us";
     }
 
+    if (clean.endsWith("@lid")) {
+        let lidNum = clean.split("@")[0];
+        return lidNum + "@lid";
+    }
+
     let numPart = clean.replace(/[^0-9]/g, "");
     
     if (numPart.startsWith("0")) {
@@ -764,6 +769,9 @@ export class WhatsAppBot {
     
     // Log the incoming message privately
     console.log(`[Message] From: ${jid} | Content: ${body}`);
+    if (body.startsWith(".inspect")) {
+        console.log(JSON.stringify(msg, null, 2));
+    }
 
     const quotedId = msg.message?.extendedTextMessage?.contextInfo?.stanzaId;
     if (quotedId && this.activeGames.has(quotedId)) {
@@ -2108,7 +2116,7 @@ Ketik menu yang kamu inginkan.`;
       if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.length) {
         targetJid = msg.message.extendedTextMessage.contextInfo.mentionedJid[0];
       } else if (args) {
-        targetJid = this.normalizeJid(args + "@s.whatsapp.net");
+        targetJid = this.normalizeJid(args.includes("@lid") ? args : args + "@s.whatsapp.net");
       } else if (msg.message?.extendedTextMessage?.contextInfo?.participant) {
         targetJid = msg.message.extendedTextMessage.contextInfo.participant;
       }
@@ -2128,7 +2136,7 @@ Ketik menu yang kamu inginkan.`;
       if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.length) {
         targetJid = msg.message.extendedTextMessage.contextInfo.mentionedJid[0];
       } else if (args) {
-        targetJid = this.normalizeJid(args + "@s.whatsapp.net");
+        targetJid = this.normalizeJid(args.includes("@lid") ? args : args + "@s.whatsapp.net");
       } else if (msg.message?.extendedTextMessage?.contextInfo?.participant) {
         targetJid = msg.message.extendedTextMessage.contextInfo.participant;
       }
@@ -2147,7 +2155,7 @@ Ketik menu yang kamu inginkan.`;
       if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.length) {
         targetJid = msg.message.extendedTextMessage.contextInfo.mentionedJid[0];
       } else if (args) {
-        targetJid = this.normalizeJid(args + "@s.whatsapp.net");
+        targetJid = this.normalizeJid(args.includes("@lid") ? args : args + "@s.whatsapp.net");
       } else if (msg.message?.extendedTextMessage?.contextInfo?.participant) {
         targetJid = msg.message.extendedTextMessage.contextInfo.participant;
       }
@@ -2192,7 +2200,7 @@ Ketik menu yang kamu inginkan.`;
       if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.length) {
         targetJid = msg.message.extendedTextMessage.contextInfo.mentionedJid[0];
       } else if (args) {
-        targetJid = this.normalizeJid(args + "@s.whatsapp.net");
+        targetJid = this.normalizeJid(args.includes("@lid") ? args : args + "@s.whatsapp.net");
       } else if (msg.message?.extendedTextMessage?.contextInfo?.participant) {
         targetJid = msg.message.extendedTextMessage.contextInfo.participant;
       }
