@@ -1,0 +1,2 @@
+[phases.setup]
+nixPkgs = ['nodejs', 'npm', 'fontconfig', 'dejavu_fonts', 'noto-fonts', 'ubuntu_font_family']

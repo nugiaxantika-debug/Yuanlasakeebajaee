@@ -1,0 +1,72 @@
+
+> react-example@0.0.0 dev
+> tsx server.ts
+
+Firebase Admin SDK initialized successfully
+WebSocket server error: Port 24678 is already in use
+Uncaught Exception: Error: listen EADDRINUSE: address already in use 0.0.0.0:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1941:16)
+    at listenInCluster (node:net:1998:12)
+    at node:net:2207:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3000
+}
+[jujqkqpenolimako@gmail.com] Starting initialization...
+[default] Starting initialization...
+[default] Using WA v2.3000.1035194821, isLatest: true
+[jujqkqpenolimako@gmail.com] Using WA v2.3000.1035194821, isLatest: true
+[default] QR Code generated. Please scan.
+[jujqkqpenolimako@gmail.com] Bot connected successfully!
+[jujqkqpenolimako@gmail.com] Connection closed - Status code: 440. Reconnecting: true
+[jujqkqpenolimako@gmail.com] Cleaning up old socket before start...
+[jujqkqpenolimako@gmail.com] Starting initialization...
+[jujqkqpenolimako@gmail.com] Using WA v2.3000.1035194821, isLatest: true
+[jujqkqpenolimako@gmail.com] Bot connected successfully!
+[jujqkqpenolimako@gmail.com] Connection closed - Status code: 440. Reconnecting: true
+[jujqkqpenolimako@gmail.com] Cleaning up old socket before start...
+[jujqkqpenolimako@gmail.com] Starting initialization...
+[jujqkqpenolimako@gmail.com] Using WA v2.3000.1035194821, isLatest: true
+[jujqkqpenolimako@gmail.com] Bot connected successfully!
+[jujqkqpenolimako@gmail.com] Connection closed - Status code: 440. Reconnecting: true
+[jujqkqpenolimako@gmail.com] Cleaning up old socket before start...
+[jujqkqpenolimako@gmail.com] Starting initialization...
+[jujqkqpenolimako@gmail.com] Using WA v2.3000.1035194821, isLatest: true
+[jujqkqpenolimako@gmail.com] Bot connected successfully!
+[jujqkqpenolimako@gmail.com] Connection closed - Status code: 440. Reconnecting: true
+[jujqkqpenolimako@gmail.com] Cleaning up old socket before start...
+[jujqkqpenolimako@gmail.com] Starting initialization...
+[jujqkqpenolimako@gmail.com] Using WA v2.3000.1035194821, isLatest: true
+[jujqkqpenolimako@gmail.com] Bot connected successfully!
+[jujqkqpenolimako@gmail.com] Connection closed - Status code: 440. Reconnecting: true
+[default] QR Code generated. Please scan.
+[jujqkqpenolimako@gmail.com] Cleaning up old socket before start...
+[jujqkqpenolimako@gmail.com] Starting initialization...
+[jujqkqpenolimako@gmail.com] Using WA v2.3000.1035194821, isLatest: true
+[jujqkqpenolimako@gmail.com] Bot connected successfully!
+[jujqkqpenolimako@gmail.com] Connection closed - Status code: 440. Reconnecting: true
+[jujqkqpenolimako@gmail.com] Cleaning up old socket before start...
+[jujqkqpenolimako@gmail.com] Starting initialization...
+[jujqkqpenolimako@gmail.com] Using WA v2.3000.1035194821, isLatest: true
+[jujqkqpenolimako@gmail.com] Bot connected successfully!
+[default] QR Code generated. Please scan.
+[jujqkqpenolimako@gmail.com] Connection closed - Status code: 440. Reconnecting: true
+[jujqkqpenolimako@gmail.com] Cleaning up old socket before start...
+[jujqkqpenolimako@gmail.com] Starting initialization...
+[jujqkqpenolimako@gmail.com] Using WA v2.3000.1035194821, isLatest: true
+[jujqkqpenolimako@gmail.com] Bot connected successfully!
+[jujqkqpenolimako@gmail.com] Connection closed - Status code: 440. Reconnecting: true
+[jujqkqpenolimako@gmail.com] Cleaning up old socket before start...
+[jujqkqpenolimako@gmail.com] Starting initialization...
+[jujqkqpenolimako@gmail.com] Using WA v2.3000.1035194821, isLatest: true
+[default] QR Code generated. Please scan.
+[jujqkqpenolimako@gmail.com] Bot connected successfully!
+[jujqkqpenolimako@gmail.com] Connection closed - Status code: 440. Reconnecting: true
+[jujqkqpenolimako@gmail.com] Cleaning up old socket before start...
+[jujqkqpenolimako@gmail.com] Starting initialization...
+[jujqkqpenolimako@gmail.com] Using WA v2.3000.1035194821, isLatest: true
+[jujqkqpenolimako@gmail.com] Bot connected successfully!
+[jujqkqpenolimako@gmail.com] Connection closed - Status code: 440. Reconnecting: true

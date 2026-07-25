@@ -1,0 +1,11 @@
+{
+ "stauts": 404,
+ "error": {
+  "message": "🔍 - Not Found - /removebg?url=https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+  "isError": true
+ },
+ "dev": {
+  "stack": "👻",
+  "time": "7/23/2026 | 12:07:29 AM"
+ }
+}
