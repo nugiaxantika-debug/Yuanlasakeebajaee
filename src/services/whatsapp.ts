@@ -814,7 +814,11 @@ export class WhatsAppBot {
 
     const senderJidRaw = msg.key.participant || msg.participant || jid;
     const senderJid = typeof senderJidRaw === 'string' ? this.normalizeJid(senderJidRaw) : senderJidRaw;
+    console.log("[DEBUG] senderJid:", senderJid);
+    console.log("[DEBUG] ownerNumbers:", Array.from(this.ownerNumbers));
+    console.log("[DEBUG] msg.key.fromMe:", msg.key.fromMe);
     const isOwner = msg.key.fromMe || this.ownerNumbers.has(senderJid);
+    console.log("[DEBUG] isOwner:", isOwner);
     const isPremium = isOwner || this.premiumNumbers.has(senderJid);
     const isGroup = jid.endsWith("@g.us");
     if (this.afkUsers.has(senderJid)) {
@@ -2099,10 +2103,10 @@ Ketik menu yang kamu inginkan.`;
       let targetJid = "";
       if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.length) {
         targetJid = msg.message.extendedTextMessage.contextInfo.mentionedJid[0];
-      } else if (msg.message?.extendedTextMessage?.contextInfo?.participant) {
-        targetJid = msg.message.extendedTextMessage.contextInfo.participant;
       } else if (args) {
         targetJid = this.normalizeJid(args + "@s.whatsapp.net");
+      } else if (msg.message?.extendedTextMessage?.contextInfo?.participant) {
+        targetJid = msg.message.extendedTextMessage.contextInfo.participant;
       }
       if (targetJid) targetJid = this.normalizeJid(targetJid);
       if (!targetJid) {
@@ -2119,10 +2123,10 @@ Ketik menu yang kamu inginkan.`;
       let targetJid = "";
       if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.length) {
         targetJid = msg.message.extendedTextMessage.contextInfo.mentionedJid[0];
-      } else if (msg.message?.extendedTextMessage?.contextInfo?.participant) {
-        targetJid = msg.message.extendedTextMessage.contextInfo.participant;
       } else if (args) {
         targetJid = this.normalizeJid(args + "@s.whatsapp.net");
+      } else if (msg.message?.extendedTextMessage?.contextInfo?.participant) {
+        targetJid = msg.message.extendedTextMessage.contextInfo.participant;
       }
       if (targetJid) targetJid = this.normalizeJid(targetJid);
       if (!targetJid) {
@@ -2138,10 +2142,10 @@ Ketik menu yang kamu inginkan.`;
       let targetJid = "";
       if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.length) {
         targetJid = msg.message.extendedTextMessage.contextInfo.mentionedJid[0];
-      } else if (msg.message?.extendedTextMessage?.contextInfo?.participant) {
-        targetJid = msg.message.extendedTextMessage.contextInfo.participant;
       } else if (args) {
         targetJid = this.normalizeJid(args + "@s.whatsapp.net");
+      } else if (msg.message?.extendedTextMessage?.contextInfo?.participant) {
+        targetJid = msg.message.extendedTextMessage.contextInfo.participant;
       }
       if (targetJid) targetJid = this.normalizeJid(targetJid);
       if (!targetJid) {
@@ -2183,10 +2187,10 @@ Ketik menu yang kamu inginkan.`;
       let targetJid = "";
       if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.length) {
         targetJid = msg.message.extendedTextMessage.contextInfo.mentionedJid[0];
-      } else if (msg.message?.extendedTextMessage?.contextInfo?.participant) {
-        targetJid = msg.message.extendedTextMessage.contextInfo.participant;
       } else if (args) {
         targetJid = this.normalizeJid(args + "@s.whatsapp.net");
+      } else if (msg.message?.extendedTextMessage?.contextInfo?.participant) {
+        targetJid = msg.message.extendedTextMessage.contextInfo.participant;
       }
       if (targetJid) targetJid = this.normalizeJid(targetJid);
       if (!targetJid) {
