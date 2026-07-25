@@ -2126,7 +2126,7 @@ Ketik menu yang kamu inginkan.`;
       } else {
         this.premiumNumbers.add(targetJid);
         this.saveBotSettings();
-        await this.sock.sendMessage(jid, { text: `✨ *Add Premium*\n\nBerhasil menambahkan @${targetJid.split('@')[0]} ke daftar premium!`, mentions: [targetJid] }, { quoted: msg });
+        await this.sock.sendMessage(jid, { text: `✨ *Add Premium*\n\nBerhasil menambahkan ${targetJid.split('@')[0]} ke daftar premium!` }, { quoted: msg });
       }
       this.broadcastState(`Responded to addpremium command`);
     } else if (body.startsWith(".addowner") || body.startsWith("addowner")) {
@@ -2146,7 +2146,7 @@ Ketik menu yang kamu inginkan.`;
       } else {
         this.ownerNumbers.add(targetJid);
         this.saveBotSettings();
-        await this.sock.sendMessage(jid, { text: `✅ Berhasil menambahkan @${targetJid.split('@')[0]} sebagai owner baru!`, mentions: [targetJid] }, { quoted: msg });
+        await this.sock.sendMessage(jid, { text: `✅ Berhasil menambahkan ${targetJid.split('@')[0]} sebagai owner baru!` }, { quoted: msg });
       }
     } else if (body.startsWith(".delowner") || body.startsWith("delowner")) {
       if (!isOwner) return await this.sock.sendMessage(jid, { text: `⚠️ Hanya owner yang dapat menggunakan fitur ini!` }, { quoted: msg });
@@ -2166,9 +2166,9 @@ Ketik menu yang kamu inginkan.`;
         if (this.ownerNumbers.has(targetJid)) {
             this.ownerNumbers.delete(targetJid);
             this.saveBotSettings();
-            await this.sock.sendMessage(jid, { text: `✅ Berhasil menghapus @${targetJid.split('@')[0]} dari daftar owner!`, mentions: [targetJid] }, { quoted: msg });
+            await this.sock.sendMessage(jid, { text: `✅ Berhasil menghapus ${targetJid.split('@')[0]} dari daftar owner!` }, { quoted: msg });
         } else {
-            await this.sock.sendMessage(jid, { text: `⚠️ User @${targetJid.split('@')[0]} bukan owner.`, mentions: [targetJid] }, { quoted: msg });
+            await this.sock.sendMessage(jid, { text: `⚠️ User ${targetJid.split('@')[0]} bukan owner.` }, { quoted: msg });
         }
       }
     } else if (body.startsWith(".listowner") || body.startsWith("listowner") || body.startsWith(".list owner") || body.startsWith("list owner")) {
@@ -2178,9 +2178,9 @@ Ketik menu yang kamu inginkan.`;
       } else {
         let text = `👑 *Daftar Owner*\n\n`;
         owners.forEach((owner, idx) => {
-           text += `${idx + 1}. @${owner.split('@')[0]}\n`;
+           text += `${idx + 1}. ${owner.split('@')[0]}\n`;
         });
-        await this.sock.sendMessage(jid, { text: text, mentions: owners }, { quoted: msg });
+        await this.sock.sendMessage(jid, { text: text }, { quoted: msg });
       }
     } else if (body.startsWith(".listpremium") || body.startsWith("listpremium") || body.startsWith(".list premium") || body.startsWith("list premium")) {
       const premiums = Array.from(this.premiumNumbers);
@@ -2189,9 +2189,9 @@ Ketik menu yang kamu inginkan.`;
       } else {
         let text = `✨ *Daftar Premium*\n\n`;
         premiums.forEach((prem, idx) => {
-           text += `${idx + 1}. @${prem.split('@')[0]}\n`;
+           text += `${idx + 1}. ${prem.split('@')[0]}\n`;
         });
-        await this.sock.sendMessage(jid, { text: text, mentions: premiums }, { quoted: msg });
+        await this.sock.sendMessage(jid, { text: text }, { quoted: msg });
       }
     } else if (body.startsWith(".delpremium") || body.startsWith("delpremium") || body.startsWith(".delprem") || body.startsWith("delprem")) {
       if (!isOwner) return await this.sock.sendMessage(jid, { text: `⚠️ Hanya owner yang dapat menggunakan fitur ini!` }, { quoted: msg });
@@ -2211,9 +2211,9 @@ Ketik menu yang kamu inginkan.`;
         if (this.premiumNumbers.has(targetJid)) {
             this.premiumNumbers.delete(targetJid);
             this.saveBotSettings();
-            await this.sock.sendMessage(jid, { text: `✅ Berhasil menghapus @${targetJid.split('@')[0]} dari daftar premium!`, mentions: [targetJid] }, { quoted: msg });
+            await this.sock.sendMessage(jid, { text: `✅ Berhasil menghapus ${targetJid.split('@')[0]} dari daftar premium!` }, { quoted: msg });
         } else {
-            await this.sock.sendMessage(jid, { text: `⚠️ User @${targetJid.split('@')[0]} bukan premium.`, mentions: [targetJid] }, { quoted: msg });
+            await this.sock.sendMessage(jid, { text: `⚠️ User ${targetJid.split('@')[0]} bukan premium.` }, { quoted: msg });
         }
       }
     } else if (body.startsWith(".addlimit") || body.startsWith("addlimit")) {
