@@ -881,7 +881,7 @@ export class WhatsAppBot {
     
     if (ownerCommands.includes(requestedCmd) && !isOwner) {
       this.broadcastState(`Blocked non-owner from using ${requestedCmd}`);
-      return await this.sock.sendMessage(jid, { text: "👑 *Akses Ditolak*\nPerintah ini hanya bisa digunakan oleh Owner!" }, { quoted: msg });
+      return await this.sock.sendMessage(jid, { text: `👑 *Akses Ditolak*\nPerintah ini hanya bisa digunakan oleh Owner!\n\n(Info Debug: ID Anda adalah ${senderJid})` }, { quoted: msg });
     }
     
     if (premiumCommands.includes(requestedCmd) && !isPremium) {
@@ -2110,7 +2110,7 @@ Ketik menu yang kamu inginkan.`;
       this.broadcastState(`Responded to restartbot command`);
       setTimeout(() => this.restart(), 1000);
     } else if (body.startsWith(".addpremium") || body.startsWith("addpremium") || body.startsWith(".addprem") || body.startsWith("addprem")) {
-      if (!isOwner) return await this.sock.sendMessage(jid, { text: `⚠️ Hanya owner yang dapat menggunakan fitur ini!` }, { quoted: msg });
+      if (!isOwner) return await this.sock.sendMessage(jid, { text: `⚠️ Hanya owner yang dapat menggunakan fitur ini!\n(ID Anda: ${senderJid})` }, { quoted: msg });
       const args = messageContent.replace(/^\.?(addpremium|addprem)\s*/i, "").trim();
       let targetJid = "";
       if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.length) {
@@ -2130,7 +2130,7 @@ Ketik menu yang kamu inginkan.`;
       }
       this.broadcastState(`Responded to addpremium command`);
     } else if (body.startsWith(".addowner") || body.startsWith("addowner")) {
-      if (!isOwner) return await this.sock.sendMessage(jid, { text: `⚠️ Hanya owner yang dapat menggunakan fitur ini!` }, { quoted: msg });
+      if (!isOwner) return await this.sock.sendMessage(jid, { text: `⚠️ Hanya owner yang dapat menggunakan fitur ini!\n(ID Anda: ${senderJid})` }, { quoted: msg });
       const args = messageContent.replace(/^\.?addowner\s*/i, "").trim();
       let targetJid = "";
       if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.length) {
@@ -2149,7 +2149,7 @@ Ketik menu yang kamu inginkan.`;
         await this.sock.sendMessage(jid, { text: `✅ Berhasil menambahkan ${targetJid.split('@')[0]} sebagai owner baru!` }, { quoted: msg });
       }
     } else if (body.startsWith(".delowner") || body.startsWith("delowner")) {
-      if (!isOwner) return await this.sock.sendMessage(jid, { text: `⚠️ Hanya owner yang dapat menggunakan fitur ini!` }, { quoted: msg });
+      if (!isOwner) return await this.sock.sendMessage(jid, { text: `⚠️ Hanya owner yang dapat menggunakan fitur ini!\n(ID Anda: ${senderJid})` }, { quoted: msg });
       const args = messageContent.replace(/^\.?delowner\s*/i, "").trim();
       let targetJid = "";
       if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.length) {
@@ -2194,7 +2194,7 @@ Ketik menu yang kamu inginkan.`;
         await this.sock.sendMessage(jid, { text: text }, { quoted: msg });
       }
     } else if (body.startsWith(".delpremium") || body.startsWith("delpremium") || body.startsWith(".delprem") || body.startsWith("delprem")) {
-      if (!isOwner) return await this.sock.sendMessage(jid, { text: `⚠️ Hanya owner yang dapat menggunakan fitur ini!` }, { quoted: msg });
+      if (!isOwner) return await this.sock.sendMessage(jid, { text: `⚠️ Hanya owner yang dapat menggunakan fitur ini!\n(ID Anda: ${senderJid})` }, { quoted: msg });
       const args = messageContent.replace(/^\.?(delpremium|delprem)\s*/i, "").trim();
       let targetJid = "";
       if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.length) {
